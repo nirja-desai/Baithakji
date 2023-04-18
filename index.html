@@ -71,7 +71,6 @@
   
   <body>
 
-    
 
 
     <div id="map"></div>
@@ -79,8 +78,6 @@
     <script>
       mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsYWthciIsImEiOiJjaW4yNHBvMDMwYjZrdXBra29qYmxnOGM5In0.4Lh20IMXH60mscRm5EKuNw';
 
-      
-      
 
     const geojson = {
         'type': 'FeatureCollection',
@@ -173,22 +170,23 @@
         
      
 
-
+// Create the map
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/kalakar/clgl1igk4008f01qlixjqoqy6',
         center: [78.194226, 22.372645],
         zoom: 4.5
-        
-
-
       });
 
+      // Add market labels for each location 
       map.on('load', function() {
         // Add a GeoJSON source containing place coordinates and information.
         map.addSource('geojson', {
             'type': 'geojson',
-            'data': geojson
+            'data': geojson,
+            cluster: true, 
+            clusterMaxZoom: 8, // Max zoom to cluster points on
+            clusterRadius: 23 // Radius of each cluster when clustering points (defaults to 50)
         });
 
         map.addLayer({
@@ -220,13 +218,10 @@
          // .setLngLat(feature.properties.name)
           
 
-          
-          
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
               .setHTML(
                 `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p>`
-               
               )
           )
           .addTo(map);
