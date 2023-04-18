@@ -151,6 +151,29 @@
 
       });
 
+      map.on('load', function() {
+        // Add a GeoJSON source containing place coordinates and information.
+        map.addSource('geojson', {
+            'type': 'geojson',
+            'data': geojson
+        });
+
+        map.addLayer({
+            'id': 'poi-labels',
+            'type': 'symbol',
+            'source': 'geojson',
+            'layout': {
+                'text-field': ['get', 'name'],
+                'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                'text-radial-offset': 0.5,
+                'text-justify': 'auto',
+                'icon-image': ['concat', ['get', 'icon'], '-15']
+            }
+        });
+
+        // map.rotateTo(180, { duration: 10000 });
+    });
+
       // add markers to map
       for (const feature of geojson.features) {
         // create a HTML element for each feature
@@ -168,7 +191,7 @@
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
               .setHTML(
-                `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+                `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p>`
                
               )
           )
