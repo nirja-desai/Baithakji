@@ -178,7 +178,10 @@
         // Add a GeoJSON source containing place coordinates and information.
         map.addSource('geojson', {
             'type': 'geojson',
-            'data': geojson
+            'data': geojson,
+            cluster: true, 
+            clusterMaxZoom: 8, // Max zoom to cluster points on
+            clusterRadius: 23 // Radius of each cluster when clustering points (defaults to 50)
         });
 
         map.addLayer({
