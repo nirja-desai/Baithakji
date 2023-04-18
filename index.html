@@ -58,7 +58,7 @@
   
   <body>
 
-
+<!-- Header Text -->
 <div class="header"> 
   <h1>Shri Vallabhacharya Baithak<h1>
   <h5>all 84 places<h5> 
@@ -73,7 +73,7 @@
 
       
 
-
+// Add in all the locations as a JSON object
     const geojson = {
         'type': 'FeatureCollection',
         'features': [
@@ -165,17 +165,15 @@
         
      
 
-
+// Create the map
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/kalakar/clgl1igk4008f01qlixjqoqy6',
         center: [78.194226, 22.372645],
         zoom: 4.5
-        
-
-
       });
 
+      // Add market labels for each location 
       map.on('load', function() {
         // Add a GeoJSON source containing place coordinates and information.
         map.addSource('geojson', {
@@ -212,13 +210,10 @@
          // .setLngLat(feature.properties.name)
           
 
-          
-          
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
               .setHTML(
                 `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p>`
-               
               )
           )
           .addTo(map);
