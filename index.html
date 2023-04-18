@@ -15,25 +15,18 @@
     />
     <style>
 
-     .header {
-        padding: 40px;
-        text-align: left;
-        background: #f9f7f7;
-        margin:30px;
-        z-index: 999px;
-        font-size:20px;
-      }
+  
 
       body {
         margin: 0;
         padding: 0;
       }
       #map {
-       
+        position: relative;
         top: 0;
         bottom: 0;
         width: 100%;
-        width: 100%; height: 800px;
+        width: 100%; height: 600px;
       }
       .marker {
         background-image: url('peacock_feather.svg');
@@ -44,13 +37,33 @@
         cursor: pointer;
       }
       .mapboxgl-popup {
-        max-width: 200px;
+        max-width: 300px;
       }
       .mapboxgl-popup-content {
         text-align: center;
         font-family: 'Open Sans', sans-serif;
       }
-    
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      .title {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 60%;
+        background-color: rgb(23, 14, 14);
+        color: rgb(253, 252, 251);
+        text-align: center;
+      }
+      
     </style>
   </head>
   
@@ -58,12 +71,7 @@
   
   <body>
 
-
-<div class="header"> 
-  <h1>Shri Vallabhacharya Baithak<h1>
-  <h5>all 84 places<h5> 
-</div> 
-
+    
 
 
     <div id="map"></div>
@@ -72,8 +80,8 @@
       mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsYWthciIsImEiOiJjaW4yNHBvMDMwYjZrdXBra29qYmxnOGM5In0.4Lh20IMXH60mscRm5EKuNw';
 
       
-
-
+      
+// Add in all the locations as a JSON object
     const geojson = {
         'type': 'FeatureCollection',
         'features': [
@@ -225,7 +233,16 @@
       }
     </script>
 
+<div class="title">
+  <h1>Shri Vallabhacharya Baithak<h1>
+    <h5>all 84 places<h5> 
+</div>
 
+
+
+    <div class="footer">
+      <p>Footer</p>
+    </div>
 
 
   </body>
