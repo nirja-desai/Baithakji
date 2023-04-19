@@ -13,52 +13,33 @@
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    
-      
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
-    
     <style>
-       
 
-
-
-
+     .header {
+        padding: 40px;
+        text-align: left;
+        background: #f9f7f7;
+        margin:30px;
+        z-index: 999px;
+        font-size:20px;
+      }
 
       body {
-        font-family: 'Lato', sans-serif;
-        color: rgb(255, 255, 255);
-        font-weight: 400;
-        line-height: 1.58;
-        letter-spacing: -.003em;
-        font-size: 14px;
         margin: 0;
         padding: 0;
-      
       }
-
-      h1 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 800;
-        font-style: bold;
-        font-size: 32px;
-        line-height: 1.15;
-        letter-spacing: -.02em;
-        color: rgb(255, 255, 255);
-        -webkit-font-smoothing: antialiased;
-      }
-  
-
-    
-
       #map {
+       
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        width: 100%; height: 800px;
       }
       .marker {
-        background-image: url('images/circle.svg');
+        background-image: url('peacock_feather.svg');
         background-size: cover;
-        width: 8px;
-        height: 8px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         cursor: pointer;
       }
@@ -66,13 +47,10 @@
         max-width: 200px;
       }
       .mapboxgl-popup-content {
-        text-align: Left;
-        font-style: bold;
-        font-family: 'Lato', sans-serif;
-        color:#264163;
-        background-color: #ffffff;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
       }
-
+    
     </style>
   </head>
   
@@ -91,8 +69,6 @@
     <div id="map"></div>
 
     <script>
-
-    
       mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsYWthciIsImEiOiJjaW4yNHBvMDMwYjZrdXBra29qYmxnOGM5In0.4Lh20IMXH60mscRm5EKuNw';
 
       
@@ -190,11 +166,14 @@
      
 
 
-
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/kalakar/clgl1igk4008f01qlixjqoqy6',
         center: [78.194226, 22.372645],
+        zoom: 4.5
+        
+
+
       });
 
       map.on('load', function() {
@@ -203,22 +182,17 @@
             'type': 'geojson',
             'data': geojson
         });
-      
-  
+
         map.addLayer({
             'id': 'poi-labels',
             'type': 'symbol',
             'source': 'geojson',
             'layout': {
                 'text-field': ['get', 'name'],
-                'text-variable-anchor': ['top'],
+                'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
                 'text-radial-offset': 0.5,
-                
                 'text-justify': 'auto',
-                'icon-image': ['concat', ['get', 'icon'], '-15'],
-
-                
-                
+                'icon-image': ['concat', ['get', 'icon'], '-15']
             }
         });
 
@@ -249,24 +223,6 @@
           )
           .addTo(map);
       }
-
-      //collapsable button
-
-      var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-              content.style.maxHeight = null;
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-            } 
-          });
-        }
-
     </script>
 
 
