@@ -25,6 +25,7 @@
 
 
 
+
       body {
         font-family: 'Lato', sans-serif;
         color: rgb(255, 255, 255);
@@ -52,11 +53,6 @@
     
 
       #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        width: 100%;
       }
       .marker {
         background-image: url('images/circle.svg');
@@ -67,7 +63,7 @@
         cursor: pointer;
       }
       .mapboxgl-popup {
-        max-width: 300px;
+        max-width: 200px;
       }
       .mapboxgl-popup-content {
         text-align: Left;
@@ -76,85 +72,6 @@
         color:#264163;
         background-color: #ffffff;
       }
-     
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #1E324D;
-        color: white;
-        text-align: center;
-      }
-
-      .titlebox {
-        position: relative;
-        display:flex;
-       
-        height: auto;
-        max-width: 600px;
-        min-width: 100px;
-        background-color: #1E324D;
-       
-        
-        padding-left: 20px;
-        padding-top: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-      }
-
-      .title {
-
-        float: left;
-      }
-
-      img {
-        
-        height: 120px;
-        width: 80px;
-        float:left;
-        padding-right: 10px;
-        
-        
-      }
-
-      .collapsible {
-        background-color: #777;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-      }
-
-      .active, .collapsible:hover {
-        background-color: #555;
-      }
-
-      .collapsible:after {
-        content: '\002B';
-        color: white;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
-      }
-
-      .active:after {
-        content: "\2212";
-      }
-
-      .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color: #f1f1f1;
-      }
-      
-
 
     </style>
   </head>
@@ -164,6 +81,12 @@
   <body>
 
 
+<div class="header"> 
+  <h1>Shri Vallabhacharya Baithak<h1>
+  <h5>all 84 places<h5> 
+</div> 
+
+
 
     <div id="map"></div>
 
@@ -171,6 +94,8 @@
 
     
       mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsYWthciIsImEiOiJjaW4yNHBvMDMwYjZrdXBra29qYmxnOGM5In0.4Lh20IMXH60mscRm5EKuNw';
+
+      
 
 
     const geojson = {
@@ -264,26 +189,19 @@
         
      
 
-      // Create the map
+
 
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/kalakar/clgl1igk4008f01qlixjqoqy6',
         center: [78.194226, 22.372645],
-        zoom: 2,
-        minZoom: 3.5, // note the camel-case
-      
       });
 
-      // Add market labels for each location 
       map.on('load', function() {
         // Add a GeoJSON source containing place coordinates and information.
         map.addSource('geojson', {
             'type': 'geojson',
-            'data': geojson,
-            cluster: true, 
-            clusterMaxZoom: 8, // Max zoom to cluster points on
-            clusterRadius: 23 // Radius of each cluster when clustering points (defaults to 50)
+            'data': geojson
         });
       
   
@@ -320,10 +238,13 @@
          // .setLngLat(feature.properties.name)
           
 
+          
+          
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
               .setHTML(
                 `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p>`
+               
               )
           )
           .addTo(map);
@@ -349,35 +270,6 @@
     </script>
 
 
-
-<div class="titlebox">
-  
-  <div class="title">
-    <div class="image">
-      <img src="images/sample.jpg">
-    </div>
-  <h1>Journey of Shri Vallabhacharya through India</h1>
-  <p>all 84 places</p> 
-
-  <button type="button" class="collapsible">Open Collapsible</button>
-  <div class="content">
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-  </div>
-  
-
-
-  
-  </div>
-
-  
-</div>
-
-
-
-    <div class="footer">
-      <p>Footer</p>
-      
-    </div>
 
 
   </body>
