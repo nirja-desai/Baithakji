@@ -11,17 +11,19 @@
       rel="stylesheet"
     />
     
-      
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+        
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>  
     
     <style>
        
-
-
-
-
       body {
         font-family: 'Lato', sans-serif;
         color: rgb(255, 255, 255);
@@ -41,7 +43,7 @@
         font-size: 32px;
         line-height: 1.15;
         letter-spacing: -.02em;
-        color: rgb(255, 255, 255);
+        color: #393839;
         -webkit-font-smoothing: antialiased;
       }
   
@@ -62,6 +64,8 @@
         height: 15px;
         border-radius: 50%;
         cursor: pointer;
+        font-family: 'Lato', sans-serif;
+        color: rgb(255, 255, 255);
       }
       .mapboxgl-popup {
         max-width: 300px;
@@ -70,7 +74,7 @@
         text-align: Left;
         font-style: bold;
         font-family: 'Lato', sans-serif;
-        color:#264163;
+        color:#444444;
         background-color: #ffffff;
       }
      
@@ -85,12 +89,12 @@
       }
 
       .titlebox {
-        position: relative;
-        display:flex;
+        position: absolute;
+        display: flex;
        
-        height: auto;
-        max-width: 600px;
-        min-width: 100px;
+        height: 350px;
+        max-width: 100%;
+        min-width: 500px;
         background-color: #EFE9D8;
        
         
@@ -98,25 +102,34 @@
         padding-top: 20px;
         padding-right: 20px;
         padding-bottom: 20px;
+
       }
 
       .title {
-
+        position: absolute;
+        display: flex;
         float: left;
+        font-family: 'Playfair Display', serif;
+        color: #D7A93B;
+
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
       }
 
-      .image {
+      .headerimage img {
         
-        height: 120px;
-        width: 80px;
+        height: 200px;
+        width: auto;
         float:left;
-        padding-right: 10px;
+        padding-right: 20px;
         
         
       }
 
       .collapsible {
-        background-color: #777;
+        background-color: #D7A93B;
         color: white;
         cursor: pointer;
         padding: 10px;
@@ -348,6 +361,7 @@
             cluster: true, 
             clusterMaxZoom: 8, // Max zoom to cluster points on
             clusterRadius: 23 // Radius of each cluster when clustering points (defaults to 50)
+            
         });
       
   
@@ -415,25 +429,26 @@
 
 
 <div class="titlebox">
-  
-  <div class="title">
-    <div class="image">
-      <img src="images/sample.jpg">
-    </div>
-  <h1>Baithakji: Shri Vallabhacharya locations through India</h1>
-  <p>all 84 places</p> 
 
-  <button type="button" class="collapsible">Open Collapsible</button>
-  <div class="content">
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+ 
+
+  <div class="title"> 
+     
+    <div class="headerimage">
+    <img src="images/vallabhacharya.png">
   </div>
   
-
-
+      <h1>Baithakji: Shri Vallabhacharya locations through India</h1>
+        
+        <p>all 84 places</p> 
+        
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="content">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+        </div>
   
+ 
   </div>
-
-  
 </div>
 
 
@@ -442,7 +457,6 @@
       <p>Data <a class=\"hover-1\" href=http://www.nathdwara.in/about_nathdwara.php target=\"_blank\"> <b>source</b></a>. Produced by <a class=\"hover-1\" href= https://www.instagram.com/kalakar/ target=\"_blank\"> <b>Nirja</b></a> and <a class=\"hover-1\" href= https://www.instagram.com/sumildesai/ target=\"_blank\"><b>Sumil Desai</b></a> &copy; 2023 
       
         
-      
       </p>
       <div class="box">
         <a href="https://www.instagram.com/kalakar/" target="_blank">
@@ -455,6 +469,29 @@
         <img src="images/palette.svg"/>
         </a>
     </div>
+    </div>
+
+
+
+
+<script>
+  //collapsable button
+
+  var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+</script>
 
 
   </body>
