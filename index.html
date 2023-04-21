@@ -19,18 +19,14 @@
         font-family: 'Lato', sans-serif;
         color: rgb(0, 0, 0);
         font-weight: 400;
-        line-height: 1.58;
+        line-height: normal;
         letter-spacing: -.003em;
         font-size: 14px;
         margin: 0;
         padding: 0;
       }
 
-      .emptybox{
-        width: 230px;
-        height: 20px;
-        background-color: #444444;
-      }
+   
 
       h1 {
         font-family: 'Playfair Display', serif;
@@ -45,10 +41,10 @@
 
       h2 {
         font-family: 'Lato', sans-serif;
-        font-weight: 700;
+        font-weight: 500;
         
         font-size: 32px;
-        line-height: 1.15;
+        
       
         color: #393839;
         -webkit-font-smoothing: antialiased;
@@ -128,7 +124,7 @@
         height: auto;
         float: left;
         padding-right: 15px;
-        
+        padding-bottom: 15px;
       }
 
     
@@ -136,7 +132,9 @@
       @media screen and (min-width: 601px) {
         h1 {
           font-size: 42px;
-          line-height: 100%;
+         
+          margin-top: 0 ;
+          margin-bottom: 0 ;
         }
       }
 
@@ -144,6 +142,8 @@
         h1 {
           font-size: 25px;
           line-height: 100%;
+          margin-top: 0 ;
+          margin-bottom: 0 ;
         }
       }
 
@@ -151,6 +151,8 @@
         h2  {
           font-size: 32px;
           line-height: 100%;
+          margin-top: 0 ;
+          margin-bottom: 0 ;
           
         }
       }
@@ -159,6 +161,8 @@
         h2  {
           font-size: 18px;
           line-height: 100%;
+          margin-top: .25em ;
+          margin-bottom: 0 ;
           
         }
       }
@@ -187,7 +191,36 @@
       @media screen and (max-width: 600px) {
          .headerimage img {
           
-          max-width: 180px;
+          max-width: 100px;
+        }
+      }
+
+      @media screen and (min-width: 601px) {
+         .footer {
+        
+          font-size: 14px;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+         .footer {
+          
+          font-size: 12px;
+        }
+      }
+
+      @media screen and (min-width: 601px) {
+         .body {
+          line-height: 100%;
+          font-size: 14px;
+          
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+         .body {
+          line-height: 100%;
+          font-size: 12px;
         }
       }
 
@@ -197,7 +230,6 @@
         color: white;
         cursor: pointer;
         padding: 5px;
-        
         border: none;
         text-align: left;
         outline: none;
@@ -217,12 +249,7 @@
         margin-left: 5px;
         
       }
-        /* Responsive layout - makes a one column-layout instead of a two-column layout */
-        @media (max-width: 800px) {
-          .titlebox, .title, .collapsible {
-            flex: 100%;
-          }
-        }
+       
       .active:after {
         content: "\2212";
       }
@@ -1434,9 +1461,7 @@
         
         <p>Vallabhacharya gave discourses on Bhagavata at 84 places and explained the meanings of the Puranic text. This 84 places are known as Chaurāsi Baithak (चौरासी बैठक) and now they are places of pilgrimage</p>
        
-        <div class="emptybox">
-          
-        </div>
+        
         
           <button type="button" class="collapsible">Learn more</button>
           <div class="content">
