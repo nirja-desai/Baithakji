@@ -15,6 +15,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <style>
       
+      .mapboxgl-map {
+        -webkit-tap-highlight-color: rgb(0 0 0/0);
+        font: 12px/20px 'Lato', sans-serif;
+        overflow: hidden;
+        position: relative;
+    }
+
+
+      body {
+        display: block;
+        margin: 0px;
+      }
+
       p {
         font-family: 'Lato', sans-serif;
         color: #393839;
@@ -56,10 +69,10 @@
       }
 
       .marker {
-        background-image: url('images/circle.svg');
+        background-image: url('images/bhagvat.svg');
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         cursor: pointer;
         font-family: 'Lato', sans-serif;
@@ -93,11 +106,11 @@
 
       .titlebox {
         position: absolute;
-        float: left;
+        
         -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
         box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
-        width: auto;
+        
         background-color: #EFE9D8;
         padding-left: 20px;
         padding-top: 20px;
@@ -147,9 +160,10 @@
       @media screen and (min-width: 601px) {
         h2  {
           font-size: 30px;
-          line-height: 120%;
-          margin-top: .25em ;
-          margin-bottom: .2em ;
+          
+          margin-top: 3px ;
+          margin-bottom: 3px ;
+          
           
         }
       }
@@ -157,9 +171,10 @@
       @media screen and (max-width: 600px) {
         h2  {
           font-size: 18px;
-          line-height: 130%;
-          margin-top: .25em ;
-          margin-bottom: .2em ;
+         
+          margin-top: 3px ;
+          margin-bottom: 3px ;
+          
           
         }
       }
@@ -175,6 +190,10 @@
          .titlebox {
           
           max-width: 100%;
+          padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
         }
       }
 
@@ -190,7 +209,7 @@
          .headerimage img {
           padding-right: 10px;
           padding-bottom: 10px;
-          max-width: 130px;
+          max-width: 100px;
         }
       }
 
@@ -212,16 +231,19 @@
          p {
           
           font-size: 15px;
-          padding: 10px;
-          
+          padding: 5px;
+          padding-right: 10px;
+          padding-bottom: 10px;
         }
       }
 
       @media screen and (max-width: 600px) {
          p {
           
-          font-size: 8px;
-          padding: 10px;
+          font-size: 12px;
+          padding-right: 5px;
+          padding-bottom: 5px;
+          
         }
       }
 
@@ -234,7 +256,7 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 12px;
+        
       }
 
       .active,
@@ -1408,14 +1430,23 @@
           'id': 'poi-labels',
           'type': 'symbol',
           'source': 'geojson',
+          
           'layout': {
             'text-field': ['get', 'name'],
             'text-variable-anchor': ['top'],
-            'text-radial-offset': 0.5,
+            'text-radial-offset': 1.5,
             'text-justify': 'auto',
+
             'icon-image': ['concat', ['get', 'icon'], '-15'],
+            
           }
+          
+          
+          
         });
+
+       
+
         // map.rotateTo(180, { duration: 10000 });
       });
       // add markers to map
@@ -1433,6 +1464,9 @@
 									<h3>${feature.properties.name}</h3>
 									<p>${feature.properties.description}</p>`)).addTo(map);
       }
+
+
+ 
     </script>
     <div class="titlebox">
       
@@ -1441,7 +1475,7 @@
         </div>
         <h1>Baithakji:</h1><h2> Shri Vallabhacharya's journey through India</h2>
         
-        <p>Vallabhacharya gave discourses on Bhagavata at 84 locations around India. They are known as Chaurāsi Baithak (चौरासी बैठक).</p>
+        <p>Vallabhacharya gave discourses on Bhagavat at 84 locations around India. They are known as Chaurāsi Baithak (चौरासी बैठक).</p>
        
         
         
