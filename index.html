@@ -2,224 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Baithakji : </title>
+    <title>Demo: Add custom markers in Mapbox GL JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
     <link
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
       rel="stylesheet"
     />
-    
-      
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>  
-    
     <style>
-       
 
-
-
+     .header {
+        padding: 40px;
+        text-align: left;
+        background: #f9f7f7;
+        margin:30px;
+        z-index: 999px;
+        font-size:20px;
+      }
 
       body {
-        font-family: 'Lato', sans-serif;
-        color: rgb(255, 255, 255);
-        font-weight: 400;
-        line-height: 1.58;
-        letter-spacing: -.003em;
-        font-size: 14px;
         margin: 0;
         padding: 0;
-      
       }
-
-      h1 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 800;
-        font-style: bold;
-        font-size: 32px;
-        line-height: 1.15;
-        letter-spacing: -.02em;
-        color: rgb(255, 255, 255);
-        -webkit-font-smoothing: antialiased;
-      }
-  
-
-    
-
       #map {
-        position: absolute;
+       
         top: 0;
         bottom: 0;
         width: 100%;
-        width: 100%;
+        width: 100%; height: 800px;
       }
       .marker {
-        background-image: url('images/circle.svg');
+        background-image: url('peacock_feather.svg');
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         cursor: pointer;
       }
       .mapboxgl-popup {
-        max-width: 300px;
+        max-width: 200px;
       }
       .mapboxgl-popup-content {
-        text-align: Left;
-        font-style: bold;
-        font-family: 'Lato', sans-serif;
-        color:#264163;
-        background-color: #ffffff;
-      }
-     
-      .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #EFE9D8;
-        color: #393839;
         text-align: center;
+        font-family: 'Open Sans', sans-serif;
       }
-
-      .titlebox {
-        position: relative;
-        display:flex;
-       
-        height: auto;
-        max-width: 600px;
-        min-width: 100px;
-        background-color: #EFE9D8;
-       
-        
-        padding-left: 20px;
-        padding-top: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
-      }
-
-      .title {
-
-        float: left;
-      }
-
-      .image {
-        
-        height: 120px;
-        width: 80px;
-        float:left;
-        padding-right: 10px;
-        
-        
-      }
-
-      .collapsible {
-        background-color: #777;
-        color: white;
-        cursor: pointer;
-        padding: 10px;
-        width: 100%;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 15px;
-      }
-
-      .active, .collapsible:hover {
-        background-color: #555;
-      }
-
-      .collapsible:after {
-        content: '\002B';
-        color: white;
-        font-weight: bold;
-        float: right;
-        margin-left: 5px;
-      }
-
-      .active:after {
-        content: "\2212";
-      }
-
-      .content {
-        padding: 0 18px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.2s ease-out;
-        background-color: #f1f1f1;
-      }
-      
-      a,
-          a>span {
-            position: relative;
-            color: inherit;
-            text-decoration: none;
-            line-height: 24px;
-          }
-
-          a:before,
-          a:after,
-          a>span:before,
-          a>span:after {
-            content: '';
-            position: absolute;
-            transition: transform .5s ease;
-          }
-
-          a:link {
-            color: #a48c31;
-            background-color: transparent;
-            text-decoration: underline;
-            font-weight:700;
-          }
-
-          a:visited {
-            color: a48c31;
-            background-color: transparent;
-            text-decoration: none;
-          }
-
-          a:hover {
-            color: a48c31;
-            background-color: transparent;
-          }
-
-
-          
-          .hover-1 {
-            padding-bottom: 50px;
-            color: #c04a2f;
-          }
-          .hover-1:before {
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: #492059;
-            transform: scaleX(0);
-            color: #c04a2f;
-          }
-          .hover-1:hover:before {
-            transform: scaleX(1);
-            color: #c04a2f;
-          }
-
-      .box {
-            text-align: center;
-            
-            margin: auto;
-            
-          }
-          .box img {
-            width: 20px;
-            margin-right: 20px;
-            
-            margin-left: .5vh;
-            margin-right: .5vh;
-          }
-
+    
     </style>
   </head>
   
@@ -228,14 +59,19 @@
   <body>
 
 
+<div class="header"> 
+  <h1>Shri Vallabhacharya Baithak<h1>
+  <h5>all 84 places<h5> 
+</div> 
+
+
 
     <div id="map"></div>
 
     <script>
-
-
-    
       mapboxgl.accessToken = 'pk.eyJ1Ijoia2FsYWthciIsImEiOiJjaW4yNHBvMDMwYjZrdXBra29qYmxnOGM5In0.4Lh20IMXH60mscRm5EKuNw';
+
+      
 
 
     const geojson = {
@@ -329,43 +165,34 @@
         
      
 
-      // Create the map
 
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/kalakar/clgnvvub2007301qn2ym83hwn',
+        style: 'mapbox://styles/kalakar/clgl1igk4008f01qlixjqoqy6',
         center: [78.194226, 22.372645],
-        zoom: 2,
-        minZoom: 3.5, // note the camel-case
-      
+        zoom: 4.5
+        
+
+
       });
 
-      // Add market labels for each location 
       map.on('load', function() {
         // Add a GeoJSON source containing place coordinates and information.
         map.addSource('geojson', {
             'type': 'geojson',
-            'data': geojson,
-            cluster: true, 
-            clusterMaxZoom: 8, // Max zoom to cluster points on
-            clusterRadius: 23 // Radius of each cluster when clustering points (defaults to 50)
+            'data': geojson
         });
-      
-  
+
         map.addLayer({
             'id': 'poi-labels',
             'type': 'symbol',
             'source': 'geojson',
             'layout': {
                 'text-field': ['get', 'name'],
-                'text-variable-anchor': ['top'],
+                'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
                 'text-radial-offset': 0.5,
-                
                 'text-justify': 'auto',
-                'icon-image': ['concat', ['get', 'icon'], '-15'],
-
-                
-                
+                'icon-image': ['concat', ['get', 'icon'], '-15']
             }
         });
 
@@ -385,82 +212,21 @@
          // .setLngLat(feature.properties.name)
           
 
+          
+          
           .setPopup(
             new mapboxgl.Popup({ offset: 25 }) // add popups
               .setHTML(
                 `<h3>${feature.properties.name}</h3><p>${feature.properties.description}</p>`
+               
               )
           )
           .addTo(map);
       }
-
-      
-
     </script>
 
 
 
-<div class="titlebox">
-  
-  <div class="title">
-    <div class="image">
-      <img src="images/sample.jpg">
-    </div>
-  <h1>Baithakji: Shri Vallabhacharya locations through India</h1>
-  <p>all 84 places</p> 
-
-  <button type="button" class="collapsible">Open Collapsible</button>
-  <div class="content">
-     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-  </div>
-  
-
-
-  
-  </div>
-
-  
-</div>
-
-
-
-    <div class="footer">
-      <p>Data <a class=\"hover-1\" href=http://www.nathdwara.in/about_nathdwara.php target=\"_blank\"> <b>source</b></a>. Produced by <a class=\"hover-1\" href= https://www.instagram.com/kalakar/ target=\"_blank\"> <b>Nirja</b></a> and <a class=\"hover-1\" href= https://www.instagram.com/sumildesai/ target=\"_blank\"><b>Sumil Desai</b></a> &copy; 2023 
-      
-        
-      
-      </p>
-      <div class="box">
-        <a href="https://www.instagram.com/kalakar/" target="_blank">
-        <img src="images/instagram.svg"/>
-        </a>
-        <a href="https://twitter.com/nirja_desai?lang=en" target="_blank">
-        <img src="images/twitter.svg"/>
-        </a>
-        <a href="http://www.nirjadesai.art" target="_blank">
-        <img src="images/palette.svg"/>
-        </a>
-    </div>
-
 
   </body>
-
-<script>
-  // collapsable button
-
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      } 
-    });
-  }
-</script>
 </html>
