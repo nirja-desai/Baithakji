@@ -15,13 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <style>
       
-      body {
+      p {
         font-family: 'Lato', sans-serif;
-        color: rgb(0, 0, 0);
+        color: #393839;
         font-weight: 400;
-        line-height: normal;
+        
         letter-spacing: -.003em;
-        font-size: 14px;
         margin: 0;
         padding: 0;
       }
@@ -32,10 +31,8 @@
         font-family: 'Playfair Display', serif;
         font-weight: 900;
         font-style: italic;
-        font-size: 35px;
-        
         letter-spacing: -.02em;
-        color: #393839;
+        color: #478C9A;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -96,7 +93,7 @@
 
       .titlebox {
         position: absolute;
-       float: left;
+        float: left;
         -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
         box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
@@ -106,6 +103,7 @@
         padding-top: 20px;
         padding-right: 20px;
         padding-bottom: 20px;
+        
       }
 
       .title {
@@ -123,8 +121,7 @@
       .headerimage img {
         height: auto;
         float: left;
-        padding-right: 15px;
-        padding-bottom: 15px;
+        
       }
 
     
@@ -149,10 +146,10 @@
 
       @media screen and (min-width: 601px) {
         h2  {
-          font-size: 32px;
-          line-height: 100%;
-          margin-top: 0 ;
-          margin-bottom: 0 ;
+          font-size: 30px;
+          line-height: 120%;
+          margin-top: .25em ;
+          margin-bottom: .2em ;
           
         }
       }
@@ -160,9 +157,9 @@
       @media screen and (max-width: 600px) {
         h2  {
           font-size: 18px;
-          line-height: 100%;
+          line-height: 130%;
           margin-top: .25em ;
-          margin-bottom: 0 ;
+          margin-bottom: .2em ;
           
         }
       }
@@ -170,7 +167,7 @@
       @media screen and (min-width: 601px) {
          .titlebox {
         
-          max-width: 700px;
+          max-width: 620px;
         }
       }
 
@@ -183,15 +180,17 @@
 
       @media screen and (min-width: 601px) {
          .headerimage img {
-        
+          padding-right: 15px;
+          padding-bottom: 15px;
           max-width: 230px;
         }
       }
 
       @media screen and (max-width: 600px) {
          .headerimage img {
-          
-          max-width: 100px;
+          padding-right: 10px;
+          padding-bottom: 10px;
+          max-width: 130px;
         }
       }
 
@@ -210,17 +209,19 @@
       }
 
       @media screen and (min-width: 601px) {
-         .body {
-          line-height: 100%;
-          font-size: 14px;
+         p {
+          
+          font-size: 15px;
+          padding: 10px;
           
         }
       }
 
       @media screen and (max-width: 600px) {
-         .body {
-          line-height: 100%;
+         p {
+          
           font-size: 12px;
+          padding: 10px;
         }
       }
 
@@ -233,7 +234,7 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 16px;
+        font-size: 12px;
       }
 
       .active,
@@ -292,31 +293,12 @@
         text-decoration: none;
       }
 
-      a:hover {
-        color: a48c31;
-        background-color: transparent;
-      }
+     
+      
 
-      .hover-1 {
-        padding-bottom: 50px;
-        color: #c04a2f;
-      }
+      
 
-      .hover-1:before {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 2px;
-        background: #492059;
-        transform: scaleX(0);
-        color: #c04a2f;
-      }
-
-      .hover-1:hover:before {
-        transform: scaleX(1);
-        color: #c04a2f;
-      }
-
+      
       .box {
         text-align: center;
         margin: auto;
@@ -1459,13 +1441,13 @@
         </div>
         <h1>Baithakji:</h1><h2> Shri Vallabhacharya's journey through India</h2>
         
-        <p>Vallabhacharya gave discourses on Bhagavata at 84 places and explained the meanings of the Puranic text. This 84 places are known as Chaurāsi Baithak (चौरासी बैठक) and now they are places of pilgrimage</p>
+        <p>Vallabhacharya gave discourses on Bhagavata at 84 locations around India. They are known as Chaurāsi Baithak (चौरासी बैठक).</p>
        
         
         
           <button type="button" class="collapsible">Learn more</button>
           <div class="content">
-            <p>Vallabhacharya was a 15th-century philosopher who founded Pushti Marg, a path of devotion within the Hindu Bhakti movement. He was born in Rajasthan, studied in Varanasi, and went on a pilgrimage across India before settling in Mathura. There, he established a temple dedicated to Lord Krishna and taught the importance of bhakti and divine grace. Today, he is revered as a saint and philosopher, and his followers continue to practice the Pushti Marg path. </p>
+            <p>Vallabhacharya was a 15th-century philosopher who founded Pushti Marg, a path of devotion within the Hindu Bhakti movement. He was born in Rajasthan, studied in Varanasi, and went on a pilgrimage across India before settling in Mathura. There, he established a temple dedicated to Lord Krishna and taught the importance of bhakti and divine grace. Today, he is revered as a saint and philosopher, and his followers continue to practice the Pushti Marg (path). Visit <a href="http://www.nathdwara.in/about_nathdwara.php" target="_blank">Nathdwara.in</a>.</p></p>
           </div>
         
       
