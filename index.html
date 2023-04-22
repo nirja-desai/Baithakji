@@ -52,8 +52,7 @@
       h2 {
         font-family: 'Lato', sans-serif;
         font-weight: 500;
-        
-        font-size: 32px;
+      
         
       
         color: #393839;
@@ -71,8 +70,8 @@
       .marker {
         background-image: url('images/bhagvat.svg');
         background-size: cover;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         cursor: pointer;
         font-family: 'Lato', sans-serif;
@@ -182,15 +181,21 @@
       @media screen and (min-width: 601px) {
          .titlebox {
         
-          max-width: 620px;
+        
+        max-width: 550px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
         }
       }
 
       @media screen and (max-width: 600px) {
          .titlebox {
           
-          max-width: 100%;
-          padding-left: 10px;
+        max-width: 100%;
+        padding-left: 10px;
         padding-top: 10px;
         padding-right: 10px;
         padding-bottom: 10px;
@@ -1441,14 +1446,15 @@
             'text-justify': 'auto',
 
             'icon-image': ['concat', ['get', 'icon'], '-15'],
-            'text-font': ["Lato Bold"]
+            'text-font': ["Lato Bold"],
+            'text-transform' : "uppercase"
             
           },
 
           "paint": {
-            "text-color": "#FF0000",
+            "text-color": "#264163",
             "text-halo-width": 1.5,
-            "text-halo-color": "#00ffff"
+            "text-halo-color": "#EFE9D8"
           }
           
           
