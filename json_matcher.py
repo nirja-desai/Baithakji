@@ -16,6 +16,9 @@ def fuzzy_match(s1, s2):
 
 counter = 0
 for item in geo_json['features']:
+    item['properties']['image'] = ""
+    item['properties']['description'] = ""
+    item['properties']['gupt'] = ""
     for object in info:
         name = object['name'].split("_")[0]
         geo_name = item['properties']['name'].split(" ")[0]
@@ -24,10 +27,17 @@ for item in geo_json['features']:
         score = fuzzy_match(geo_name, name)
         # print(str(score))
         # print("The score for " + item['properties']['name'] + " and " + object['name'] + str(score))
+        # item['properties']['image'] = ""
         if score >= 82:
-            print('Match found between ' + item['properties']['name'] + " and " + object['name'])
+            item['properties']['image'] = object['name'] + ".gif"
+            item['properties']['description'] = object['caption']
+            item['properties']['gupt'] = object['gupt']
             counter += 1
             
+json_bethak = (json.dumps(geo_json, indent=2, default=str, ensure_ascii=True))
+with open('geo_json_test.json', 'w', encoding='utf-8') as f:
+    f.write(json_bethak)
+
 print(str(counter) + " matches found")
 
 
