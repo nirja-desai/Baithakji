@@ -29,7 +29,7 @@ for item in geo_json['features']:
         # print("The score for " + item['properties']['name'] + " and " + object['name'] + str(score))
         # item['properties']['image'] = ""
         if score >= 82:
-            item['properties']['image'] = object['name'] + ".gif"
+            item['properties']['image'] = "images/" + object['name'] + ".gif"
             item['properties']['description'] = object['caption']
             item['properties']['gupt'] = object['gupt']
             counter += 1
