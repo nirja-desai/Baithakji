@@ -1,7 +1,5 @@
 {
 "type": "FeatureCollection",
-"name": "Baithakji_mapbox",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4008" } },
 "features": [
 { "type": "Feature", "properties": { "name": "Govindghat", "lat": 27.4402643, "long": 77.7131976, "title": "Govindghat", "description": "ta ta ta" }, "geometry": { "type": "Point", "coordinates": [ 77.7131976, 27.4402643 ] } },
 { "type": "Feature", "properties": { "name": "Badi Bhitar Baithak", "lat": 27.4367551, "long": 77.721315, "title": "Badi Bhitar Baithak", "description": "ba bababa" }, "geometry": { "type": "Point", "coordinates": [ 77.721315, 27.4367551 ] } },
@@ -76,7 +74,7 @@
 { "type": "Feature", "properties": { "name": "Siddhpur", "lat": 23.9108773, "long": 72.3639957, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 72.3639957, 23.9108773 ] } },
 { "type": "Feature", "properties": { "name": "Avantikapuri (Ujjain)", "lat": 23.2113032, "long": 75.7800758, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 75.7800758, 23.2113032 ] } },
 { "type": "Feature", "properties": { "name": "Pushkar", "lat": 26.485931, "long": 74.5504227, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 74.5504227, 26.485931 ] } },
-{ "type": "Feature", "properties": { "name": "Kurukshetra", "lat": 29.9797026, "long": 76.8307196, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 76.8307196, 29.9797026 ] } },
+{ "type": "Feature", "properties": { "name": "Mahabharat", "lat": 29.9797026, "long": 76.8307196, "title": "", "description": "lorem ipsum" }, "geometry": { "type": "Point", "coordinates": [ 76.8307196, 29.9797026 ] } },
 { "type": "Feature", "properties": { "name": "Haridwar", "lat": 29.951791, "long": 78.1642474, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 78.1642474, 29.951791 ] } },
 { "type": "Feature", "properties": { "name": "Badrikashram", "lat": 30.744738, "long": 79.4894206, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 79.4894206, 30.744738 ] } },
 { "type": "Feature", "properties": { "name": "Kedarnath", "lat": 30.7352821, "long": 79.0654064, "title": "", "description": "" }, "geometry": { "type": "Point", "coordinates": [ 79.0654064, 30.7352821 ] } },
