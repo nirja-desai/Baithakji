@@ -27,15 +27,15 @@ for link in tqdm(soup.find_all('area')):
         for line in (str(crouton)).splitlines():            
             if 'bethakji' in line:
                 image = re.findall(r'"([^"]*)"', line)
-                image = "https://www.nathdwara.in/" + image[0]
+                # image = "https://www.nathdwara.in/" + image[0]
                 # print(list)
             if 'GUPT' in line:
                 gupt = True
 
-        # download images
-        img_data = requests.get(image, verify=False).content
-        with open("./images/" + link[:-4] + '.gif', 'wb') as handler:
-            handler.write(img_data)
+        # # download images
+        # img_data = requests.get(image, verify=False).content
+        # with open("./images/" + link[:-4] + '.gif', 'wb') as handler:
+        #     handler.write(img_data)
         
         caption = ""
         # A lot of the text is not contained in paragraph tags, 
@@ -46,7 +46,7 @@ for link in tqdm(soup.find_all('area')):
             caption += clean
         
         # caption = json.dumps(caption)
-        bethak = {'name':link[:-4], 'url':image, 'gupt':gupt, "caption":caption}
+        bethak = {'name':link[:-4], 'url':link[:-4], 'gupt':gupt, "caption":caption}
         list.append(bethak)
          
 json_bethak = (json.dumps(list, indent=2, default=str, ensure_ascii=True))
