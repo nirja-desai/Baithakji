@@ -46,6 +46,8 @@
 
     <style>
       
+  
+
       .mapboxgl-map {
         -webkit-tap-highlight-color: rgb(0 0 0/0);
         font: 12px/20px 'Lato', sans-serif;
@@ -110,7 +112,7 @@
       }
 
       .mapboxgl-popup {
-        max-width: 350px;
+        max-width: 300px !important;
       }
 
       .mapboxgl-popup-content {
@@ -1525,8 +1527,9 @@
                 }) // add popups
                 .setHTML(`
                       <h3>${name}</h3>
+                      <img src=${image} style="width: 250px; height: auto;">
                       <p>${description}<p>
-                      <img src=${image} style="width: 200px; height: auto;">`)).addTo(map);
+                      `)).addTo(map);
             }
 
         });
