@@ -111,6 +111,17 @@
         color: rgb(255, 255, 255);
       }
 
+      .marker_gupt {
+        background-image: url('images/bhagvat_gupt.svg');
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-family: 'Lato', sans-serif;
+        color: rgb(255, 255, 255);
+      }
+
       .mapboxgl-popup {
         max-width: 250px !important;
       }
@@ -1517,8 +1528,12 @@
             const name = feature.properties.name
             const description = feature.properties.description
             const image = "./images/" + feature.properties.image
-            console.log(image)
+            // get the correspnding market based on gupt property
+            if (feature.properties.gupt) {
+              el.className = 'marker_gupt';
+            } else {
             el.className = 'marker';
+            }
             // make a marker for each feature and add it to the map
             new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates)
               // .setLngLat(feature.properties.name)
