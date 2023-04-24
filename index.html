@@ -139,9 +139,17 @@
         color: rgb(255, 255, 255);
       }
 
-      .mapboxgl-popup {
+      @media screen and (min-width: 601px){
+        .mapboxgl-popup {
+        max-width: 400px !important;
+      }
+    }
+    @media screen and (max-width: 600px){
+        .mapboxgl-popup {
         max-width: 250px !important;
       }
+    }
+
 
       .mapboxgl-popup-content {
         text-align: Left;
@@ -317,6 +325,8 @@
           vertical-align: baseline;
         }
       }
+
+      
 
       .collapsible {
         
