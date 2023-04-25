@@ -48,24 +48,55 @@
 
    
       
-      .bhagvat{
+
+      @media screen and (min-width: 601px) {
+        .bhagvat{
         background: url(images/bhagvat.svg) 0 0 no-repeat;
-        background-size: 23px;
+        background-size: 18px;
         
         content: '';
-        padding: 0 0 0 25px;
+        padding: 0 0 0 18px;
         position: relative;
         top: 0px;
       }
+    }
 
+    @media screen and (max-width: 600px) {
+      .bhagvat{
+        background: url(images/bhagvat.svg) 0 0 no-repeat;
+        background-size: 13.5px;
+        
+        content: '';
+        padding: 0 0 0 13.5px;
+        position: relative;
+        top: 0px;
+      }
+    }
+
+    @media screen and (min-width: 601px) {
+        .bhagvat_gupt{
+        background: url(images/bhagvat_gupt.svg) 0 0 no-repeat;
+        background-size: 18px;
+        
+        content: '';
+        padding: 0 0 0 18px;
+        position: relative;
+        top: 0px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
       .bhagvat_gupt{
         background: url(images/bhagvat_gupt.svg) 0 0 no-repeat;
-        background-size: 23px;
+        background-size: 13.5px;
+        
         content: '';
-        padding: 0 0 0 25px;
+        padding: 0 0 0 13.5px;
         position: relative;
         top: 0px;
       }
+    }
+
 
       .mapboxgl-map {
         -webkit-tap-highlight-color: rgb(0 0 0/0);
@@ -90,7 +121,17 @@
         padding: 0;
       }
 
-   
+      h3{
+        padding-top: 3px;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding-bottom: 3px;
+        margin-block-start: .5em;
+        margin-block-end: .5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+
+      }
 
       h1 {
         font-family: 'Playfair Display', serif;
@@ -103,7 +144,7 @@
 
       h2 {
         font-family: 'Lato', sans-serif;
-        font-weight: 500;
+        font-weight: 600;
       
         
       
@@ -212,27 +253,27 @@
       @media screen and (min-width: 601px) {
         h1 {
           font-size: 42px;
-         
           margin-top: 0 ;
-          margin-bottom: 0 ;
+          margin-bottom: 0px ;
+          
         }
       }
 
       @media screen and (max-width: 600px) {
         h1 {
-          font-size: 25px;
+          font-size: 21px;
           line-height: 100%;
           margin-top: 0 ;
-          margin-bottom: 0 ;
+          margin-bottom: 0px ;
         }
       }
 
       @media screen and (min-width: 601px) {
         h2  {
-          font-size: 30px;
+          font-size: 25px;
           
-          margin-top: 3px ;
-          margin-bottom: 3px ;
+          margin-top: 1px ;
+          margin-bottom: 1px ;
           
           
         }
@@ -240,10 +281,10 @@
 
       @media screen and (max-width: 600px) {
         h2  {
-          font-size: 18px;
+          font-size: 13px;
          
-          margin-top: 3px ;
-          margin-bottom: 3px ;
+          margin-top: 1px ;
+          margin-bottom: 1px ;
           
           
         }
@@ -253,7 +294,7 @@
          .titlebox {
         
         
-        max-width: 570px;
+        max-width: 560px;
         padding-left: 10px;
         padding-top: 10px;
         padding-right: 10px;
@@ -289,25 +330,25 @@
         }
       }
 
-      /* @media screen and (min-width: 601px) {
+       @media screen and (min-width: 601px) {
          .emptydiv {
           padding-right: 15px;
           padding-bottom: 15px;
           max-width: 230px;
-          height: 10px;
-           background-color: #478C9A; */
-        /* }
-      } */
+          height: 5px;
+           
+         }
+      } 
 
-     /* @media screen and (max-width: 600px) {
+      @media screen and (max-width: 600px) {
          .emptydiv {
-          padding-right: 10px;
-          padding-bottom: 10px;
+          padding-right: 0px;
+          padding-bottom: 0px;
           max-width: 100px;
-          height: 10px;
-         background-color: #478C9A; */
-        /* }
-      } */
+          height: 0px;
+         background-color: #478C9A; 
+         }
+      } 
 
       @media screen and (min-width: 601px) {
          .footer {
@@ -329,9 +370,9 @@
           font-size: 15px;
          
           padding-top: 10px;
-          padding-left: 10px;
+          padding-left: 5px;
           padding-bottom: 10px;
-          padding-right: 10px;
+          padding-right: 5px;
           vertical-align: baseline;
         }
       }
@@ -339,7 +380,7 @@
       @media screen and (max-width: 600px) {
          p {
           
-          font-size: 12px;
+          font-size: 11px;
           padding-bottom: 5px;
           padding-top: 5px;
           
@@ -432,7 +473,7 @@
       }
 
       .box img {
-        width: 20px;
+        width: 18px;
         margin-right: 20px;
         margin-left: .5vh;
         margin-right: .5vh;
@@ -545,13 +586,13 @@
         
         <h1>Baithakji:</h1><h2> Shri Vallabhacharya's journey through India</h2>
         
-        <p>Vallabhacharya gave discourses on the Srimad Bhagavat scripture at 84 locations around India. They are known as Chaurāsi (84) Baithak (चौरासी बैठक). Click on the Bhagvat icons on the map to learn more. Red icons <span class="bhagvat"></span> → Known location. Yellow icons <span class="bhagvat_gupt"></span> → gupt/lost baithakji.</p>
+        <p>Vallabhacharya gave discourses on the Srimad Bhagavat scripture at 84 locations around India. They are known as Chaurāsi (84) Baithak (चौरासी बैठक). <br>Click on the Bhagvat icons on the map to learn more. Red icons <span class="bhagvat"></span> → Known location. Yellow icons <span class="bhagvat_gupt"></span> → gupt/lost baithakji.</p>
         
-        
+        <div class="emptydiv"></div>
         
           <button type="button" class="collapsible">Learn more</button>
           <div class="content">
-            <p>Shri Vallabhacharya, also known as Vallabha or Vallabhacharya Mahaprabhu, was a prominent philosopher and saint in the Hindu tradition. He was born in 1479 CE in the town of Champaran (modern-day Raipur district of Chhattisgarh state in India) and lived until 1531 CE. He was the founder of Pushti Marga (Path of Grace), emphasized the importance of devotion and surrender to Lord Krishna as the means to attain spiritual liberation. According to Vallabhacharya, the ultimate goal of human life is to attain a loving relationship with Lord Krishna. He believed that this could be achieved through the practice of daily Seva ritual, which involves offering food, flowers, and other items to an image of Lord Krishna. This ritual is performed with great care and attention to detail, as a way to express love and devotion to the divine. Visit <a href="http://www.nathdwara.in/about_nathdwara.php" target="_blank">Nathdwara.in</a>.</p></p>
+            <p>Shri Vallabhacharya, also known as Vallabha or Vallabhacharya Mahaprabhu, was a prominent philosopher and saint in the Hindu tradition. He was born in 1479 CE in the town of Champaran (modern-day Raipur district of Chhattisgarh state in India) and lived until 1531 CE. He was the founder of Pushti Marga (Path of Grace), emphasized the importance of devotion and surrender to Lord Krishna as the means to attain spiritual liberation. According to Vallabhacharya, the ultimate goal of human life is to attain a loving relationship with Lord Krishna. He believed that this could be achieved through the practice of daily Seva ritual, which involves offering food, flowers, and other items to an image of Lord Krishna. This ritual is performed with great care and attention to detail, as a way to express love and devotion to the divine. Visit <a href="http://www.nathdwara.in/about_nathdwara.php" target="_blank">Nathdwara.in</a>.</p>
           </div>
         
       
