@@ -83,7 +83,7 @@ map.on('load', function() {
 			'raster-opacity': 0.5
 		},
 		'layout': {
-			'visibility': 'visible' // Set initial visibility to 'none'
+			'visibility': 'none' // Set initial visibility to 'none'
 		}
 	});
 });
