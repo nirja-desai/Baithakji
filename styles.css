@@ -1,0 +1,429 @@
+@media screen and (min-width: 601px) {
+    .bhagvat{
+    background: url(images/bhagvat.svg) 0 0 no-repeat;
+    background-size: 18px;
+    
+    content: '';
+    padding: 0 0 0 18px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bhagvat{
+    background: url(images/bhagvat.svg) 0 0 no-repeat;
+    background-size: 13.5px;
+    
+    content: '';
+    padding: 0 0 0 13.5px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+    .bhagvat_gupt{
+    background: url(images/bhagvat_gupt.svg) 0 0 no-repeat;
+    background-size: 18px;
+    
+    content: '';
+    padding: 0 0 0 18px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bhagvat_gupt{
+    background: url(images/bhagvat_gupt.svg) 0 0 no-repeat;
+    background-size: 13.5px;
+    
+    content: '';
+    padding: 0 0 0 13.5px;
+    position: relative;
+    top: 0px;
+  }
+}
+
+
+  .mapboxgl-map {
+    -webkit-tap-highlight-color: rgb(0 0 0/0);
+    font: 12px/20px 'Lato', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+
+  body {
+    display: block;
+    margin: 0px;
+  }
+
+  p {
+    font-family: 'Lato', sans-serif;
+    color: #393839;
+    font-weight: 400;
+    
+    
+    margin: 0;
+    padding: 0;
+  }
+
+  h3{
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    margin-block-start: .5em;
+    margin-block-end: .5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -.02em;
+    color: #478C9A;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+  
+    
+  
+    color: #393839;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+  }
+
+  .marker {
+    background-image: url('images/bhagvat.svg');
+    background-size: cover;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+  }
+
+  .marker_gupt {
+    background-image: url('images/bhagvat_gupt.svg');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+  }
+
+  @media screen and (min-width: 601px){
+    .mapboxgl-popup {
+    max-width: 400px !important;
+  }
+}
+@media screen and (max-width: 600px){
+    .mapboxgl-popup {
+    max-width: 250px !important;
+  }
+}
+
+
+  .mapboxgl-popup-content {
+    text-align: Left;
+    font-style: bold;
+    font-family: 'Lato', sans-serif;
+    color: #444444;
+    background-color: #ffffff;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #EFE9D8;
+    color: #393839;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .titlebox {
+    position: absolute;
+    
+    -webkit-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.2);
+    
+    background-color: #EFE9D8;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    
+  }
+
+  .title {
+    position: absolute;
+    
+    float: left;
+    font-family: 'Playfair Display', serif;
+    color: #D7A93B;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .headerimage img {
+    height: auto;
+    float: left;
+    
+  }
+
+
+
+  @media screen and (min-width: 601px) {
+    h1 {
+      font-size: 42px;
+      margin-top: 0 ;
+      margin-bottom: 0px ;
+      
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 21px;
+      line-height: 100%;
+      margin-top: 0 ;
+      margin-bottom: 0px ;
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+    h2  {
+      font-size: 25px;
+      
+      margin-top: 1px ;
+      margin-bottom: 1px ;
+      
+      
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    h2  {
+      font-size: 13px;
+     
+      margin-top: 1px ;
+      margin-bottom: 1px ;
+      
+      
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+     .titlebox {
+    
+    
+    max-width: 560px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+     .titlebox {
+      
+    max-width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+     .headerimage img {
+      padding-right: 15px;
+      padding-bottom: 15px;
+      max-width: 230px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+     .headerimage img {
+      padding-right: 10px;
+      padding-bottom: 10px;
+      max-width: 100px;
+    }
+  }
+
+   @media screen and (min-width: 601px) {
+     .emptydiv {
+      padding-right: 15px;
+      padding-bottom: 15px;
+      max-width: 230px;
+      height: 5px;
+       
+     }
+  } 
+
+  @media screen and (max-width: 600px) {
+     .emptydiv {
+      padding-right: 0px;
+      padding-bottom: 0px;
+      max-width: 100px;
+      height: 0px;
+     background-color: #478C9A; 
+     }
+  } 
+
+  @media screen and (min-width: 601px) {
+     .footer {
+    
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+     .footer {
+      
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 601px) {
+     p {
+      
+      font-size: 15px;
+     
+      padding-top: 10px;
+      padding-left: 5px;
+      padding-bottom: 10px;
+      padding-right: 5px;
+      vertical-align: baseline;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+     p {
+      
+      font-size: 11px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      
+      line-height: 16px;
+      vertical-align: baseline;
+    }
+  }
+
+  
+
+  .collapsible {
+    
+    background-color: #D7A93B;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 11px;
+    
+    
+  }
+
+  .active,
+  .collapsible:hover {
+    background-color: #95C7D1;
+  }
+
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    
+  }
+   
+  .active:after {
+    content: "\2212";
+  }
+
+  .content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+  }
+
+  a,
+  a>span {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
+  }
+
+  a:before,
+  a:after,
+  a>span:before,
+  a>span:after {
+    content: '';
+    position: absolute;
+    transition: transform .5s ease;
+  }
+
+  a:link {
+    color: #a48c31;
+    background-color: transparent;
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
+  a:visited {
+    color: a48c31;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+ 
+  
+
+  
+
+  
+  .box {
+    text-align: center;
+    margin: auto;
+  }
+
+  .box img {
+    width: 18px;
+    margin-right: 20px;
+    margin-left: .5vh;
+    margin-right: .5vh;
+  }
