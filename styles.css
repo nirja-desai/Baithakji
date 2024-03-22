@@ -56,6 +56,15 @@
     margin: 0px;
   }
 
+  /* Not currently being used */
+  #checkbox-container { position: absolute; top: 10px; left: 10px; z-index: 1; }
+
+  /* Used to hide the markers when the parikrama route is toggled on*/
+  .hidden-markers .marker,
+  .hidden-markers .marker_gupt {
+    opacity: 0.5;
+  }
+
   p {
     font-family: 'Lato', sans-serif;
     color: #393839;
@@ -109,6 +118,7 @@
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     color: rgb(255, 255, 255);
+    transition: opacity 1s ease;
   }
 
   .marker_gupt {
@@ -120,6 +130,7 @@
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     color: rgb(255, 255, 255);
+    transition: opacity 1s ease;
   }
 
   @media screen and (min-width: 601px){
@@ -316,6 +327,7 @@
     text-align: left;
     outline: none;
     font-size: 11px;
+    margin-bottom: 10px; /* Add bottom margin */
   }
 
   .active,
@@ -336,13 +348,11 @@
   }
 
   .content {
-    padding: 0 15px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
+    transition: max-height 0.3s ease; /* Add transition for max-height */
   }
-
+  
   a,
   a>span {
     position: relative;
@@ -383,4 +393,74 @@
     margin-right: 20px;
     margin-left: .5vh;
     margin-right: .5vh;
+  }
+
+  /****************/
+  /*TOGGLE SECTION*/
+  /****************/
+
+  .toggle-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px; /* Add spacing between the toggle and label */
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 20px;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .toggle-slider {
+    background-color: #D7A93B;
+  }
+
+  input:focus + .toggle-slider {
+    box-shadow: 0 0 1px #D7A93B;
+  }
+
+  input:checked + .toggle-slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  .label {
+    font-size: 14px; /* Adjust the font size as needed */
+    font-family: 'Lato', sans-serif;
+    color: #393839;
+    font-weight: 400;
   }

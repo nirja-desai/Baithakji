@@ -39,24 +39,37 @@
   </head>
   <body>
     <div id="map"></div>
+    <!-- <div id="checkbox-container">
+      <input type="checkbox" id="toggleCheckbox" onclick="toggleImage()">
+      <label for="toggleCheckbox">Toggle Image</label>
+    </div> -->
     <script src="scripts.js"></script>
     <div class="titlebox">
       
-        <div class="headerimage">
-          <img src="images/vallabhacharya.png">
-        </div>
-        
-        <h1>Baithakji:</h1><h2> Shri Vallabhacharya's journey through India</h2>
-        
-        <p>Vallabhacharya gave discourses on the Srimad Bhagavat scripture at 84 locations around India. They are known as Chaurāsi (84) Baithak (चौरासी बैठक). <br>Click on the Bhagvat icons on the map to learn more. Red icons <span class="bhagvat"></span> → Known location. Yellow icons <span class="bhagvat_gupt"></span> → gupt/lost baithakji.</p>
-        
-        <div class="emptydiv"></div>
-        
-          <button type="button" class="collapsible">Learn more</button>
-          <div class="content">
-            <p>Shri Vallabhacharya, also known as Vallabha or Vallabhacharya Mahaprabhu, was a prominent philosopher and saint in the Hindu tradition. He was born in 1479 CE in the town of Champaran (modern-day Raipur district of Chhattisgarh state in India) and lived until 1531 CE. He was the founder of Pushti Marga (Path of Grace), emphasized the importance of devotion and surrender to Lord Krishna as the means to attain spiritual liberation. According to Vallabhacharya, the ultimate goal of human life is to attain a loving relationship with Lord Krishna. He believed that this could be achieved through the practice of daily Seva ritual, which involves offering food, flowers, and other items to an image of Lord Krishna. This ritual is performed with great care and attention to detail, as a way to express love and devotion to the divine. Visit <a href="http://www.nathdwara.in/about_nathdwara.php" target="_blank">Nathdwara.in</a>.</p>
-          </div>
+      <div class="headerimage">
+        <img src="images/vallabhacharya.png">
+      </div>
       
+      <h1>Baithakji:</h1><h2> Shri Vallabhacharya's journey through India</h2>
+      
+      <p>Vallabhacharya gave discourses on the Srimad Bhagavat scripture at 84 locations around India. They are known as Chaurāsi (84) Baithak (चौरासी बैठक). <br>Click on the Bhagvat icons on the map to learn more. Red icons <span class="bhagvat"></span> → Known location. Yellow icons <span class="bhagvat_gupt"></span> → gupt/lost baithakji.</p>
+      
+      <div class="emptydiv"></div> 
+
+      <div class="button-container">
+        <button type="button" class="collapsible">Learn more</button>
+        <div class="content">
+          <p>Shri Vallabhacharya, also known as Vallabha or Vallabhacharya Mahaprabhu, was a prominent philosopher and saint in the Hindu tradition. He was born in 1479 CE in the town of Champaran (modern-day Raipur district of Chhattisgarh state in India) and lived until 1531 CE. He was the founder of Pushti Marga (Path of Grace), emphasized the importance of devotion and surrender to Lord Krishna as the means to attain spiritual liberation. According to Vallabhacharya, the ultimate goal of human life is to attain a loving relationship with Lord Krishna. He believed that this could be achieved through the practice of daily Seva ritual, which involves offering food, flowers, and other items to an image of Lord Krishna. This ritual is performed with great care and attention to detail, as a way to express love and devotion to the divine. Visit <a href="http://www.nathdwara.in/about_nathdwara.php" target="_blank">Nathdwara.in</a>.</p>
+        </div>
+      </div>
+
+      <div class="toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleCheckbox" onclick="toggleImage()"> <!-- Checked by default -->
+          <span class="toggle-slider"></span>
+        </label>
+        <div class="label">1st Parikrama</div>
+      </div>
     </div>
     <div class="footer">
       <p>Data <a class=\"hover-1\" href=http://www.nathdwara.in/about_nathdwara.php target=\"_blank\">

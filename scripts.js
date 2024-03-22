@@ -56,35 +56,26 @@ map.on('load', function() {
 
 // Function to toggle image visibility
 function toggleImage() {
-	var imageLayer = map.getLayer('custom-image-layer');
+	var imageLayer = map.getLayer('raster-tileset-layer');
 	if (imageLayer) {
-		map.setLayoutProperty('custom-image-layer', 'visibility', document.getElementById('toggleCheckbox').checked ? 'visible' : 'none');
+		map.setLayoutProperty('raster-tileset-layer', 'visibility', document.getElementById('toggleCheckbox').checked ? 'visible' : 'none');
+		map.setLayoutProperty('poi-labels', 'visibility', document.getElementById('toggleCheckbox').checked ? 'none' : 'visible');
+		var markerContainer = document.getElementById('map');
+    	markerContainer.classList.toggle('hidden-markers');
 	}
 }
 
 // Add the raster image as an overlay layer
 map.on('load', function() {
-	map.addSource('custom-image', {
-		'type': 'image',
-		'url': 'https://cors-anywhere.herokuapp.com/https://github.com/nirja-desai/kalakar.github.io/blob/main/radar.png?raw=true',
-		'coordinates': [
-			[68.1, 7.1], // Top-left corner (longitude, latitude)
-			[97.4, 7.1], // Top-right corner
-			[97.4, 35.7], // Bottom-right corner
-			[68.1, 35.7]
-		]
+	map.addSource('raster-tileset-source', {
+		'type': 'raster',
+		'url': 'mapbox://kalakar.26577fae'
 	});
 
 	map.addLayer({
-		'id': 'custom-image-layer',
+		'id': 'raster-tileset-layer',
 		'type': 'raster',
-		'source': 'custom-image',
-		'paint': {
-			'raster-opacity': 0.5
-		},
-		'layout': {
-			'visibility': 'none' // Set initial visibility to 'none'
-		}
+        'source': 'raster-tileset-source',
 	});
 });
 
@@ -130,16 +121,32 @@ fetch('https://nirja-desai.github.io/kalakar.github.io/geo_json_final.geojson')
 //COLLAPSABLE BUTTON//
 //////////////////////
 
+// Function to toggle collapsible content
+// function toggleCollapsible() {
+// 	var content = document.querySelector('.content');
+//     if (content.style.display === "none") {
+//         content.style.display = "block";
+//     } else {
+//         content.style.display = "none";
+//     }
+// }
+
+console.log("Script loaded!"); // Debugging statement
+
+var coll = document.getElementsByClassName("collapsible");
+console.log("Number of buttons found:", coll.length); // Debugging statement
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 for (i = 0; i < coll.length; i++) {
-	coll[i].addEventListener("click", function() {
-		this.classList.toggle("active");
-		var content = this.nextElementSibling;
-		if (content.style.maxHeight) {
-			content.style.maxHeight = null;
-		} else {
-			content.style.maxHeight = content.scrollHeight + "px";
-		}
-	});
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.parentNode.querySelector(".content");
+		console.log(content);
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
 }
