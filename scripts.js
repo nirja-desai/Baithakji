@@ -134,22 +134,22 @@ fetch('https://nirja-desai.github.io/kalakar.github.io/geo_json_final.geojson')
 //     }
 // }
 
-console.log("Script loaded!"); // Debugging statement
+// console.log("Script loaded!"); // Debugging statement
 
-var coll = document.getElementsByClassName("collapsible");
-console.log("Number of buttons found:", coll.length); // Debugging statement
+// var coll = document.getElementsByClassName("collapsible");
+// console.log("Number of buttons found:", coll.length); // Debugging statement
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.parentNode.querySelector(".content");
-		console.log(content);
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-    });
-}
+// var coll = document.getElementsByClassName("collapsible");
+// var i;
+// for (i = 0; i < coll.length; i++) {
+//     coll[i].addEventListener("click", function() {
+//         this.classList.toggle("active");
+//         var content = this.parentNode.querySelector(".content");
+// 		console.log(content);
+//         if (content.style.maxHeight) {
+//             content.style.maxHeight = null;
+//         } else {
+//             content.style.maxHeight = content.scrollHeight + "px";
+//         }
+//     });
+// }

@@ -62,7 +62,7 @@
   /* Used to hide the markers when the parikrama route is toggled on*/
   .hidden-markers .marker,
   .hidden-markers .marker_gupt {
-    opacity: 0.5;
+    opacity: 0.2;
   }
 
   p {
@@ -138,6 +138,9 @@
     max-width: 400px !important;
   }
 }
+
+
+
 
   @media screen and (max-width: 600px){
       .mapboxgl-popup {
@@ -232,7 +235,7 @@
 
   @media screen and (min-width: 601px) {
      .titlebox {
-    max-width: 560px;
+    max-width: 600px;
     padding-left: 10px;
     padding-top: 10px;
     padding-right: 10px;
@@ -261,8 +264,8 @@
   @media screen and (max-width: 600px) {
      .headerimage img {
       padding-right: 10px;
-      padding-bottom: 10px;
-      max-width: 100px;
+      padding-bottom: 9px;
+      max-width: 150px;
     }
   }
 
@@ -327,7 +330,7 @@
     text-align: left;
     outline: none;
     font-size: 11px;
-    margin-bottom: 10px; /* Add bottom margin */
+    margin-bottom: 0px; /* Add bottom margin */
   }
 
   .active,
@@ -351,6 +354,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease; /* Add transition for max-height */
+    background-color: #f1f1f1;
   }
   
   a,
@@ -395,18 +399,26 @@
     margin-right: .5vh;
   }
 
+ 
+  
   /****************/
   /*TOGGLE SECTION*/
   /****************/
 
   .toggle-container {
+    
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding-bottom: 8px;
+    
+    
+
   }
 
   .toggle-switch {
     display: inline-block;
     position: relative;
+    
     width: 40px;
     height: 20px;
     margin-right: 10px; /* Add spacing between the toggle and label */
@@ -463,4 +475,53 @@
     font-family: 'Lato', sans-serif;
     color: #393839;
     font-weight: 400;
+    text-align: Left;
   }
+
+  @media screen and (max-width: 600px) {
+    .label {
+     font-size: 11px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .label {
+     font-size: 11px;
+    }
+  }
+
+
+  @media screen and (max-width: 600px) {
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+.toggle-switch {
+  display: inline-block;
+  position: relative;
+  
+  width: 30px;
+  height: 15px;
+  margin-right: 10px; /* Add spacing between the toggle and label */
+}
+}
+
+@media screen and (max-width: 600px) {
+input:checked + .toggle-slider:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+}
