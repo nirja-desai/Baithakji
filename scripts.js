@@ -76,6 +76,9 @@ map.on('load', function() {
 		'id': 'raster-tileset-layer',
 		'type': 'raster',
         'source': 'raster-tileset-source',
+		'layout': {
+            'visibility': 'none' // Set visibility to 'none' initially
+		}
 	});
 });
 
