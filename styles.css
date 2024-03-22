@@ -354,7 +354,8 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease; /* Add transition for max-height */
-    background-color: #f1f1f1;
+    background-color: #f2f2f2;
+    padding-left:8px;
   }
   
   a,
